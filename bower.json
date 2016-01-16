@@ -1,0 +1,20 @@
+{
+  "name": "soundmap",
+  "version": "1.0.0",
+  "authors": [
+    "Jan Wolf <mail@jan-wolf.de>"
+  ],
+  "license": "All rights reserved",
+  "homepage": "https://jan-wolf.de",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "src/vendor"
+  ],
+  "dependencies": {
+    "foundation": "*",
+    "fontawesome": "*",
+    "owl-carousel2": "*",
+    "animate-css": "*"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "soundmap",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-concat": "*",
+    "gulp-imagemin": "*",
+    "gulp-livereload": "*",
+    "gulp-load-plugins": "*",
+    "gulp-sourcemaps": "*",
+    "gulp-minify-css": "*",
+    "gulp-notify": "*",
+    "gulp-rename": "*",
+    "gulp-ruby-sass": "*",
+    "gulp-uglify": "*",
+    "tiny-lr": "*",
+    "gulp-file-include": "*",
+    "gulp-raster": "*",
+    "gulp-filter": "*",
+    "gulp-cache": "*",
+    "gulp-strip-debug": "*"
+  }
+}

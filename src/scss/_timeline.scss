@@ -1,0 +1,104 @@
+$timeline-number-of-items: 44;
+$timeline-item-gap: 20%;
+$timeline-target-color: rgba(0, 0, 0, 0.5);
+$timeline-current-target-color: rgba(100, 100, 100, 0.5);
+$timeline-width: 2rem;
+$timeline-current-target-width: $timeline-width * 1.5;
+$timeline-hovered-target-width: $timeline-width * 2;
+$timeline-margin-top: 0.5rem;
+$timeline-margin-bottom: 2.5rem;
+$timeline-indicator-horizontal-offset: 7rem;
+$timeline-indicator-font-size: 1rem;
+$timeline-indicator-padding: 0.25rem;
+
+.timeline {
+
+  position: absolute;
+  height: calc(100% - #{$timeline-margin-top + $timeline-margin-bottom});
+  width: $timeline-width;
+  top: $timeline-margin-top;
+  right: 0;
+  z-index: 6;
+
+  .inner {
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    .label {
+
+    }
+
+    .target {
+      position: relative;
+      width: $timeline-width;
+
+      &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: $timeline-item-gap / 2;
+        height: 100% - $timeline-item-gap;
+        width: 100%;
+        background: $timeline-target-color;
+        transition: width 0.25s;
+      }
+
+      &.current:after {
+        background: $timeline-current-target-color;
+        width: $timeline-current-target-width;
+      }
+
+      .indicator {
+        display: none;
+        position: absolute;
+        left: -$timeline-indicator-horizontal-offset;
+        top: 50%;
+        margin-top: -$timeline-indicator-padding - $timeline-indicator-font-size / 2;
+        font-size: $timeline-indicator-font-size;
+        padding: $timeline-indicator-padding;
+        line-height: 1;
+
+        span {
+          font-family: 'Francois One', sans-serif;
+          padding-right: 0.125em;
+
+          &.day {
+            opacity: 0.75;
+          }
+
+          &.year {
+            opacity: 0.5;
+            padding-right: 0;
+          }
+        }
+      }
+
+      &.hovered {
+        .indicator {
+          display: block;
+        }
+
+        &:after {
+          width: $timeline-hovered-target-width;
+        }
+      }
+
+      &.hovered-surround-0:after {
+        width: $timeline-width + ($timeline-hovered-target-width - $timeline-width) / 1.5;
+      }
+
+      &.hovered-surround-1:after {
+        width: $timeline-width + ($timeline-hovered-target-width - $timeline-width) / 2;
+      }
+
+      &.hovered-surround-2:after {
+        width: $timeline-width + ($timeline-hovered-target-width - $timeline-width) / 2.5;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}

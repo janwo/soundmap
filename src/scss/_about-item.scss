@@ -1,0 +1,51 @@
+$about-item-margin-right: 9.5rem;
+$about-item-margin-bottom: 2.5rem;
+$about-item-margin-left: 0.5rem;
+
+.about-item {
+  position: absolute;
+  bottom: $about-item-margin-bottom;
+  left: $about-item-margin-left;
+  z-index: 5;
+  margin-right: $about-item-margin-right;
+
+  .date {
+    line-height: 1;
+
+     span {
+       padding-right: 0.125em;
+       font-family: 'Francois One', sans-serif;
+
+       &.day {
+         opacity: 0.75;
+       }
+
+       &.year {
+         opacity: 0.5;
+         padding-right: 0;
+       }
+     }
+  }
+
+  .description {
+    position: relative;
+
+    .hidden-text {
+      opacity: 0;
+    }
+
+    .typed-text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .coordinates {
+    .lat {
+      padding-right: 0.5em;
+    }
+  }
+}
