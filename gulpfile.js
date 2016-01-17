@@ -28,7 +28,6 @@ config.minifyCss = {
 // Plugins.
 config.plugin_srcs = {
 	scripts: [
-		config.bower + '/owl-carousel2/dist/owl.carousel.js',
 		config.bower + '/modernizr/modernizr.js',
 		config.bower + '/jquery-placeholder/jquery.placeholder.js',
 		config.bower + '/jquery.cookie/jquery.cookie.js',

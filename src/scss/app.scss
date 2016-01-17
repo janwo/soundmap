@@ -1,14 +1,16 @@
+$main-color: #ffeee3;
+
 @import 'foundation_overwrites';
 @import '../vendor/foundation/scss/normalize';
 @import '../vendor/foundation/scss/foundation/components/global';
 @import '../vendor/foundation/scss/foundation/components/grid';
 @import '../vendor/foundation/scss/foundation/components/type';
+@import '../vendor/foundation/scss/foundation/components/buttons';
 //@import 'foundation/components/accordion';
 //@import 'foundation/components/alert-boxes';
 //@import 'foundation/components/block-grid';
 //@import 'foundation/components/breadcrumbs';
 //@import 'foundation/components/button-groups';
-//@import 'foundation/components/buttons';
 //@import 'foundation/components/clearing';
 //@import 'foundation/components/dropdown';
 //@import 'foundation/components/dropdown-buttons';
@@ -43,8 +45,8 @@
 @import "main";
 @import "map";
 @import "pulsar-point";
-@import "volume-toggle";
+@import "buttons";
 @import "timeline";
-@import "mask";
+@import "stage";
 @import "about-item";
-@import "header";
+@import "overview";

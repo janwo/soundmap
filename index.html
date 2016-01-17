@@ -12,33 +12,46 @@
 	<link href='https://fonts.googleapis.com/css?family=Francois+One|Didact+Gothic' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<div class="timeline">
-		<div class="inner"></div>
-	</div>
-	<header>Sounds<span>Southeast Asia</span></header>
-	<div class="about-item">
-		<h1 class="date">
-			<span class="month"></span><span class="day"></span><span class="year"></span>
-		</h1>
-		<div class="coordinates">
-			Latitude: <span class="lat"></span>Longitude: <span class="lng"></span>
-		</div>
-		<div class="description">
-			<div class="hidden-text"></div>
-			<div class="typed-text" data-type-speed="50"></div>
-		</div>
-	</div>
-	<div class="pulsar-point">
-		<div class="inner">
-			<div class="center-point"></div>
-			<div class="circular-wave"></div>
-			<div class="circular-wave"></div>
+	<div class="overview">
+		<div class="row">
+			<div class="column small-10 medium-8 small-centered">
+				<h1>Soundmap <span>Southeast Asia</span></h1>
+				<p>"Sounds of Southeast Asia" is an interactive and explorative map, representing our auditive travel diary through parts of Southeast Asia. Lena Fuhr, Linh Nguyen, Marie Kollarczyk and Jan Wolf travelled for 44 days from 27. August to 9. October with a group of six. One recording was taken per day, which lead us to a number of 44 recordings in total.</p>
+				<p>Functioning as a sound diary this web application integrates a timeline of the daily recorded sounds combined with a map showing the related places. Our objective was quite similar to the one of a typical travel diary: to authentically document our travels.</p>
+				<p>To enable the listener to listen to the audio files more focused, each day is first played back without any further information on its source. Only when a sound is repeated after its length of 30 seconds a description appears to explain the scenery and context.</p>
+				<p>Recording sounds helped us to practice our listening skills and to get aware of the characteristics of places more intensely by consciously paying attention to their soundscape. Personally, we expect that relistening to the recordings triggers our memories and always, even in a few years, brings up pictures and emotions back to our mind. However, we hope that besides us people want to experience how places, they probably have not visited before, sound like. Let’s find out if we are able to escape the own space and enter another one.</p>
+				<p>This project was part of the seminar “Sound Culture” by Petra Klusmeyer at the Hochschule für Künste Bremen.</p>
+				<div class="text-center">
+					<button class="close-overview" data-onclick-text="Fortfahren">Beginnen</button>
+				</div>
+			</div>
 		</div>
 	</div>
-	<div class="map"></div>
-	<div class="mask top"></div>
-	<div class="mask bottom"></div>
-	<div class="volume-toggle fa fa-volume-up"></div>
+	<div class="stage">
+		<div class="timeline">
+			<div class="inner"></div>
+		</div>
+
+		<div class="about-item">
+			<h1 class="date">
+				<span class="month"></span><span class="day"></span><span class="year"></span>
+			</h1>
+			<div class="coordinates">
+				Latitude: <span class="lat"></span>Longitude: <span class="lng"></span>
+			</div>
+			<div class="description">
+				<div class="hidden-text"></div>
+				<div class="typed-text fade" data-type-speed="10"></div>
+			</div>
+		</div>
+
+		<div class="volume-toggle fa fa-volume-up"></div>
+		<div class="open-overview fa fa-angle-down"></div>
+		<canvas class="pulsar-point"></canvas>
+		<div class="map"></div>
+		<div class="mask top"></div>
+		<div class="mask bottom"></div>
+	</div>
 	<audio></audio>
 </body>
 </html>

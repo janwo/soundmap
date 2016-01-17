@@ -465,7 +465,7 @@ body {
   background: #fff;
   color: #222;
   cursor: auto;
-  font-family: "Didact Gothic", sans-serif;
+  font-family: "Didact Gothic", serif;
   font-style: normal;
   font-weight: normal;
   line-height: 1.5;
@@ -2017,12 +2017,12 @@ td {
 
 /* Default Link Styles */
 a {
-  color: #008CBA;
+  color: #aa6539;
   line-height: inherit;
   text-decoration: none;
 }
 a:hover, a:focus {
-  color: #0078a0;
+  color: #925731;
 }
 a img {
   border: none;
@@ -2050,7 +2050,7 @@ p aside {
 /* Default header styles */
 h1, h2, h3, h4, h5, h6 {
   color: #222222;
-  font-family: "Didact Gothic", sans-serif;
+  font-family: "Didact Gothic", serif;
   font-style: normal;
   font-weight: bold;
   line-height: 1.4;
@@ -2366,8 +2366,240 @@ blockquote p {
     page-break-after: avoid;
   }
 }
+button, .button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 0;
+  border-style: solid;
+  border-width: 0;
+  cursor: pointer;
+  font-family: "Francois One", sans-serif;
+  font-weight: normal;
+  line-height: normal;
+  margin: 0 0 1.25rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.5rem 1rem 0.5625rem 1rem;
+  font-size: 1rem;
+  background-color: #aa6539;
+  border-color: #88512d;
+  color: #FFFFFF;
+  -webkit-transition: background-color 300ms ease-out;
+          transition: background-color 300ms ease-out;
+}
+button:hover, button:focus, .button:hover, .button:focus {
+  background-color: #88512d;
+}
+button:hover, button:focus, .button:hover, .button:focus {
+  color: #FFFFFF;
+}
+button.secondary, .button.secondary {
+  background-color: #e7e7e7;
+  border-color: #b9b9b9;
+  color: #333333;
+}
+button.secondary:hover, button.secondary:focus, .button.secondary:hover, .button.secondary:focus {
+  background-color: #b9b9b9;
+}
+button.secondary:hover, button.secondary:focus, .button.secondary:hover, .button.secondary:focus {
+  color: #333333;
+}
+button.success, .button.success {
+  background-color: #43AC6A;
+  border-color: #368a55;
+  color: #FFFFFF;
+}
+button.success:hover, button.success:focus, .button.success:hover, .button.success:focus {
+  background-color: #368a55;
+}
+button.success:hover, button.success:focus, .button.success:hover, .button.success:focus {
+  color: #FFFFFF;
+}
+button.alert, .button.alert {
+  background-color: #f04124;
+  border-color: #cf2a0e;
+  color: #FFFFFF;
+}
+button.alert:hover, button.alert:focus, .button.alert:hover, .button.alert:focus {
+  background-color: #cf2a0e;
+}
+button.alert:hover, button.alert:focus, .button.alert:hover, .button.alert:focus {
+  color: #FFFFFF;
+}
+button.warning, .button.warning {
+  background-color: #f08a24;
+  border-color: #cf6e0e;
+  color: #FFFFFF;
+}
+button.warning:hover, button.warning:focus, .button.warning:hover, .button.warning:focus {
+  background-color: #cf6e0e;
+}
+button.warning:hover, button.warning:focus, .button.warning:hover, .button.warning:focus {
+  color: #FFFFFF;
+}
+button.info, .button.info {
+  background-color: #a0d3e8;
+  border-color: #61b6d9;
+  color: #333333;
+}
+button.info:hover, button.info:focus, .button.info:hover, .button.info:focus {
+  background-color: #61b6d9;
+}
+button.info:hover, button.info:focus, .button.info:hover, .button.info:focus {
+  color: #FFFFFF;
+}
+button.large, .button.large {
+  padding: 0.5625rem 1.125rem 0.625rem 1.125rem;
+  font-size: 1.25rem;
+}
+button.small, .button.small {
+  padding: 0.4375rem 0.875rem 0.5rem 0.875rem;
+  font-size: 0.8125rem;
+}
+button.tiny, .button.tiny {
+  padding: 0.3125rem 0.625rem 0.375rem 0.625rem;
+  font-size: 0.6875rem;
+}
+button.expand, .button.expand {
+  padding: 0.5rem 1rem 0.5625rem 1rem;
+  font-size: 1rem;
+  padding-bottom: 0.5625rem;
+  padding-top: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  width: 100%;
+}
+button.left-align, .button.left-align {
+  text-align: left;
+  text-indent: 0.75rem;
+}
+button.right-align, .button.right-align {
+  text-align: right;
+  padding-right: 0.75rem;
+}
+button.radius, .button.radius {
+  border-radius: 3px;
+}
+button.round, .button.round {
+  border-radius: 1000px;
+}
+button.disabled, button[disabled], .button.disabled, .button[disabled] {
+  background-color: #aa6539;
+  border-color: #88512d;
+  color: #FFFFFF;
+  box-shadow: none;
+  cursor: default;
+  opacity: 0.7;
+}
+button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[disabled]:focus, .button.disabled:hover, .button.disabled:focus, .button[disabled]:hover, .button[disabled]:focus {
+  background-color: #88512d;
+}
+button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[disabled]:focus, .button.disabled:hover, .button.disabled:focus, .button[disabled]:hover, .button[disabled]:focus {
+  color: #FFFFFF;
+}
+button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[disabled]:focus, .button.disabled:hover, .button.disabled:focus, .button[disabled]:hover, .button[disabled]:focus {
+  background-color: #aa6539;
+}
+button.disabled.secondary, button[disabled].secondary, .button.disabled.secondary, .button[disabled].secondary {
+  background-color: #e7e7e7;
+  border-color: #b9b9b9;
+  color: #333333;
+  box-shadow: none;
+  cursor: default;
+  opacity: 0.7;
+}
+button.disabled.secondary:hover, button.disabled.secondary:focus, button[disabled].secondary:hover, button[disabled].secondary:focus, .button.disabled.secondary:hover, .button.disabled.secondary:focus, .button[disabled].secondary:hover, .button[disabled].secondary:focus {
+  background-color: #b9b9b9;
+}
+button.disabled.secondary:hover, button.disabled.secondary:focus, button[disabled].secondary:hover, button[disabled].secondary:focus, .button.disabled.secondary:hover, .button.disabled.secondary:focus, .button[disabled].secondary:hover, .button[disabled].secondary:focus {
+  color: #333333;
+}
+button.disabled.secondary:hover, button.disabled.secondary:focus, button[disabled].secondary:hover, button[disabled].secondary:focus, .button.disabled.secondary:hover, .button.disabled.secondary:focus, .button[disabled].secondary:hover, .button[disabled].secondary:focus {
+  background-color: #e7e7e7;
+}
+button.disabled.success, button[disabled].success, .button.disabled.success, .button[disabled].success {
+  background-color: #43AC6A;
+  border-color: #368a55;
+  color: #FFFFFF;
+  box-shadow: none;
+  cursor: default;
+  opacity: 0.7;
+}
+button.disabled.success:hover, button.disabled.success:focus, button[disabled].success:hover, button[disabled].success:focus, .button.disabled.success:hover, .button.disabled.success:focus, .button[disabled].success:hover, .button[disabled].success:focus {
+  background-color: #368a55;
+}
+button.disabled.success:hover, button.disabled.success:focus, button[disabled].success:hover, button[disabled].success:focus, .button.disabled.success:hover, .button.disabled.success:focus, .button[disabled].success:hover, .button[disabled].success:focus {
+  color: #FFFFFF;
+}
+button.disabled.success:hover, button.disabled.success:focus, button[disabled].success:hover, button[disabled].success:focus, .button.disabled.success:hover, .button.disabled.success:focus, .button[disabled].success:hover, .button[disabled].success:focus {
+  background-color: #43AC6A;
+}
+button.disabled.alert, button[disabled].alert, .button.disabled.alert, .button[disabled].alert {
+  background-color: #f04124;
+  border-color: #cf2a0e;
+  color: #FFFFFF;
+  box-shadow: none;
+  cursor: default;
+  opacity: 0.7;
+}
+button.disabled.alert:hover, button.disabled.alert:focus, button[disabled].alert:hover, button[disabled].alert:focus, .button.disabled.alert:hover, .button.disabled.alert:focus, .button[disabled].alert:hover, .button[disabled].alert:focus {
+  background-color: #cf2a0e;
+}
+button.disabled.alert:hover, button.disabled.alert:focus, button[disabled].alert:hover, button[disabled].alert:focus, .button.disabled.alert:hover, .button.disabled.alert:focus, .button[disabled].alert:hover, .button[disabled].alert:focus {
+  color: #FFFFFF;
+}
+button.disabled.alert:hover, button.disabled.alert:focus, button[disabled].alert:hover, button[disabled].alert:focus, .button.disabled.alert:hover, .button.disabled.alert:focus, .button[disabled].alert:hover, .button[disabled].alert:focus {
+  background-color: #f04124;
+}
+button.disabled.warning, button[disabled].warning, .button.disabled.warning, .button[disabled].warning {
+  background-color: #f08a24;
+  border-color: #cf6e0e;
+  color: #FFFFFF;
+  box-shadow: none;
+  cursor: default;
+  opacity: 0.7;
+}
+button.disabled.warning:hover, button.disabled.warning:focus, button[disabled].warning:hover, button[disabled].warning:focus, .button.disabled.warning:hover, .button.disabled.warning:focus, .button[disabled].warning:hover, .button[disabled].warning:focus {
+  background-color: #cf6e0e;
+}
+button.disabled.warning:hover, button.disabled.warning:focus, button[disabled].warning:hover, button[disabled].warning:focus, .button.disabled.warning:hover, .button.disabled.warning:focus, .button[disabled].warning:hover, .button[disabled].warning:focus {
+  color: #FFFFFF;
+}
+button.disabled.warning:hover, button.disabled.warning:focus, button[disabled].warning:hover, button[disabled].warning:focus, .button.disabled.warning:hover, .button.disabled.warning:focus, .button[disabled].warning:hover, .button[disabled].warning:focus {
+  background-color: #f08a24;
+}
+button.disabled.info, button[disabled].info, .button.disabled.info, .button[disabled].info {
+  background-color: #a0d3e8;
+  border-color: #61b6d9;
+  color: #333333;
+  box-shadow: none;
+  cursor: default;
+  opacity: 0.7;
+}
+button.disabled.info:hover, button.disabled.info:focus, button[disabled].info:hover, button[disabled].info:focus, .button.disabled.info:hover, .button.disabled.info:focus, .button[disabled].info:hover, .button[disabled].info:focus {
+  background-color: #61b6d9;
+}
+button.disabled.info:hover, button.disabled.info:focus, button[disabled].info:hover, button[disabled].info:focus, .button.disabled.info:hover, .button.disabled.info:focus, .button[disabled].info:hover, .button[disabled].info:focus {
+  color: #FFFFFF;
+}
+button.disabled.info:hover, button.disabled.info:focus, button[disabled].info:hover, button[disabled].info:focus, .button.disabled.info:hover, .button.disabled.info:focus, .button[disabled].info:hover, .button[disabled].info:focus {
+  background-color: #a0d3e8;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+@media only screen and (min-width: 40.0625em) {
+  button, .button {
+    display: inline-block;
+  }
+}
 body {
-  background: #111;
+  background: #ffeee3;
   height: 100%;
   width: 100%;
 }
@@ -2386,52 +2618,12 @@ audio {
 .pulsar-point {
   left: 50%;
   top: 50%;
-  margin-top: -10rem;
-  margin-left: -10rem;
-  width: 20rem;
-  height: 20rem;
+  margin-top: -7.5rem;
+  margin-left: -7.5rem;
+  width: 15rem;
+  height: 15rem;
   position: absolute;
   z-index: 5;
-}
-.pulsar-point .inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-.pulsar-point .inner .center-point {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 1rem;
-  height: 1rem;
-  margin-top: -0.5rem;
-  margin-left: -0.5rem;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.5);
-}
-.pulsar-point .inner .circular-wave {
-  top: 50%;
-  left: 50%;
-  width: 1rem;
-  height: 1rem;
-  margin-top: -0.5rem;
-  margin-left: -0.5rem;
-  position: absolute;
-  opacity: 0;
-  border-radius: 50%;
-  border: solid rgba(0, 0, 0, 0.5) 0.1rem;
-}
-.pulsar-point .inner .circular-wave.ready {
-  opacity: 1;
-  -webkit-transition: border 10s, margin-top 10s, margin-left 10s, width 10s, height 10s;
-          transition: border 10s, margin-top 10s, margin-left 10s, width 10s, height 10s;
-}
-.pulsar-point .inner .circular-wave.running {
-  width: 100%;
-  height: 100%;
-  margin-top: -50%;
-  margin-left: -50%;
-  border: solid transparent 0.5rem;
 }
 
 .volume-toggle {
@@ -2443,6 +2635,26 @@ audio {
   opacity: 0.5;
   font-size: 1.5rem;
   width: 1.5em;
+  cursor: pointer;
+}
+.volume-toggle:hover {
+  opacity: 0.75;
+}
+
+.open-overview {
+  position: absolute;
+  top: 0.5rem;
+  left: 50%;
+  margin-left: -0.8em;
+  padding: 0.25em;
+  z-index: 6;
+  opacity: 0.5;
+  font-size: 2rem;
+  width: 1.1em;
+  cursor: pointer;
+}
+.open-overview:hover {
+  opacity: 0.75;
 }
 
 .timeline {
@@ -2517,7 +2729,13 @@ audio {
   margin-left: 0;
 }
 
-.mask {
+.stage {
+  position: relative;
+  height: 100%;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+.stage .mask {
   pointer-events: none;
   position: absolute;
   left: 0;
@@ -2525,12 +2743,12 @@ audio {
   height: 25%;
   z-index: 1;
 }
-.mask.top {
+.stage .mask.top {
   top: 0;
   background-image: -webkit-linear-gradient(90deg, rgba(255, 238, 227, 0), #ffeee3);
   background-image: linear-gradient(0deg, rgba(255, 238, 227, 0), #ffeee3);
 }
-.mask.bottom {
+.stage .mask.bottom {
   bottom: 0;
   background-image: -webkit-linear-gradient(270deg, rgba(255, 238, 227, 0), #ffeee3);
   background-image: linear-gradient(180deg, rgba(255, 238, 227, 0), #ffeee3);
@@ -2569,23 +2787,53 @@ audio {
   left: 0;
   width: 100%;
   height: 100%;
+  /* Fade version */
+}
+.about-item .description .typed-text.fade {
+  -webkit-animation: fadeInUp 1s;
+          animation: fadeInUp 1s;
+}
+.about-item .description .typed-text.fade:empty {
+  display: none;
+}
+.about-item .coordinates {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 .about-item .coordinates .lat {
   padding-right: 0.5em;
 }
 
-header {
+.overview {
   position: absolute;
-  z-index: 5;
-  width: 100%;
-  top: 0.5rem;
   left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999999;
+  background-color: #ffeee3;
+  overflow: auto;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+.overview .row {
+  display: table;
+  height: 100%;
+}
+.overview .row .column {
+  display: table-cell;
+  vertical-align: middle;
+}
+.overview .row .column h1 {
   opacity: 0.5;
-  font-size: 1.5rem;
-  text-align: center;
+  font-size: 2.5em;
   font-family: 'Francois One', sans-serif;
 }
-header span {
+.overview .row .column h1 span {
+  display: block;
   opacity: 0.5;
-  padding-left: 0.25em;
+  font-size: 0.8em;
+}
+.overview .row .column button {
+  text-transform: uppercase;
 }

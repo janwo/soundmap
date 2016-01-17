@@ -21,17 +21,24 @@ function AboutItem() {
 		// Delete previous text.
 		description_typed.empty();
 		description_hidden.empty();
+
+		/*
 		var intervalObject = description_typed.data('text-animation-object');
 		if(intervalObject !== undefined) clearInterval(intervalObject);
+
+
+		// Get animation parameters.
+		var typeSpeed = description_typed.attr('data-type-speed');
+		*/
 
 		// Stop here, if no new description is set.
 		if(text == null) return;
 
-		// Get animation parameters.
-		var typeSpeed = description_typed.attr('data-type-speed');
-
 		// If there is a description set, add text and animation.
 		description_hidden.html(text);
+		description_typed.html(text);
+
+		/*
 		description_typed.data('text-animation-object', setInterval(function(){
 			// Clear animation object, when done.
 			if(text === description_typed.html()){
@@ -43,6 +50,7 @@ function AboutItem() {
 			// Add a new letter.
 			description_typed.html(text.substring(0, description_typed.html().length + 1));
 		}, typeSpeed === undefined ? 100 : typeSpeed));
+		*/
 	};
 
 	var about = $('.about-item');

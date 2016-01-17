@@ -6,6 +6,10 @@ function Timeline() {
 		onChangeListeners.push(onChangeListener);
 	};
 
+	Timeline.prototype.getCurrentTarget = function(){
+		return this.currentIndex;
+	};
+
 	Timeline.prototype.setTarget = function(index){
 		// Update target info.
 		this.currentIndex = index;
@@ -61,9 +65,6 @@ function Timeline() {
 			// Add it to the timeline.
 			$( timeline ).append( target );
 		}
-
-		// Set initial target.
-		if(this.items.length > 0) this.setTarget(0);
 	};
 
 	/**

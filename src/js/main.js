@@ -7,7 +7,7 @@
 		var about = new AboutItem();
 		var timeline = new Timeline();
 		var pulsar = new PulsarPoint();
-		new VolumeToggle();
+		var volume = new VolumeToggle();
 
 		// Initialize audio.
 		var audio = $('audio');
@@ -106,6 +106,41 @@
 						break;
 				}
 			} );
+
+			var overviewClickListener = function(){
+				var overview = $('.overview').removeClass('fadeInDown fadeOutUp');
+				var stage = $('.stage').removeClass('fadeOutDown fadeInUp');
+
+				if($(this).is('.open-overview')) {
+					stage.addClass('fadeOutDown');
+					overview.show().addClass('fadeInDown');
+					volume.mute();
+				}
+
+				if($(this ).is('.close-overview')) {
+					overview.addClass('fadeOutUp');
+					stage.addClass('fadeInUp');
+					setTimeout(function(){
+						overview.hide();
+					}, 1000);
+
+					// Set timeline position to the first one.
+					if(timeline.getCurrentTarget() === undefined) {
+						timeline.setTarget(0);
+					} else {
+						volume.unmute();
+					}
+				}
+			};
+
+			// Bind overview button toggles.
+			$('.close-overview').click(overviewClickListener);
+			$('.open-overview').click(overviewClickListener ).click(function(){
+				// Change text of the button accordingly.
+				var close_overview_button = $('.close-overview');
+				var on_click_text = close_overview_button.attr('data-onclick-text');
+				if( on_click_text !== undefined ) close_overview_button.html(on_click_text);
+			});
 		} );
 	});
 }(jQuery));
