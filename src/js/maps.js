@@ -7,6 +7,10 @@ function Map() {
 		map.setCenter(location);
 	};
 
+	Map.prototype.setBottomMaskHeight = function(height){
+		masks.filter('.bottom').height(height);
+	};
+
 	Map.prototype.animateLocationMove = function(lat, lng, millis, moveCallback) {
 		var framesPerSecond = 28;
 		var initialMillis = Date.now();
@@ -138,9 +142,10 @@ function Map() {
 	var styledMapType = new google.maps.StyledMapType(styles, { name: 'Styled' });
 	map.mapTypes.set('Styled', styledMapType);
 
-	// Move masks.
+	// Initialize masks.
+	var masks = $('.mask');
 	google.maps.event.addListenerOnce(map, 'bounds_changed', function(){
-		$('.mask' ).appendTo($map.find('.gm-style'));
+		masks.appendTo($map.find('.gm-style'));
 	});
 
 	// Resize.

@@ -50,7 +50,7 @@
 				audio.on('playwhenready', function(){
 					// Play function.
 					var play = function(){
-						console.log('Audio is now ready and plays.');
+						console.log('Audio is now ready and is playing.');
 						audio.trigger('play');
 						pulsar.start();
 					};
@@ -68,7 +68,10 @@
 					console.log('Audio file ended.');
 					// Trigger text.
 					var loops = audio.data('loops');
-					if(loops == 0) about.setDescription(item.description);
+					if(loops == 0) {
+						about.setDescription(item.description);
+						map.setBottomMaskHeight(about.getDescriptionOffsetFromBottom());
+					}
 
 					// Loop it.
 					audio.data('loops', loops + 1);
@@ -78,14 +81,14 @@
 				// Update about information.
 				about.setDate(item.date);
 				about.setDescription(null);
+				console.log(about.getDescriptionOffsetFromBottom());
+				map.setBottomMaskHeight(about.getDescriptionOffsetFromBottom());
 
 				// Update map location and set callback for the animation handling.
+				console.log('Playing moving animation.');
 				map.animateLocationMove(item.lat, item.lng, 2000, function(lat, lng, delta) {
 					// Update coordinates.
 					about.setLocation(lat, lng);
-
-					// Start pulsating.
-					console.log('Animation ' + (delta * 100) + '% done.');
 					if(delta >= 1) audio.trigger('playwhenready');
 				});
 			});
@@ -112,24 +115,39 @@
 				var stage = $('.stage').removeClass('fadeOutDown fadeInUp');
 
 				if($(this).is('.open-overview')) {
+					// Stage: Fade out.
 					stage.addClass('fadeOutDown');
+
+					// Overview: Fade in.
 					overview.show().addClass('fadeInDown');
+
+					// Mute.
 					volume.mute();
 				}
 
 				if($(this ).is('.close-overview')) {
+					// Overview: Fade out.
 					overview.addClass('fadeOutUp');
+
+					// Stage: Fade in.
 					stage.addClass('fadeInUp');
 					setTimeout(function(){
+						// Hide overview.
 						overview.hide();
-					}, 1000);
 
-					// Set timeline position to the first one.
-					if(timeline.getCurrentTarget() === undefined) {
-						timeline.setTarget(0);
-					} else {
-						volume.unmute();
-					}
+
+						// Initial start.
+						if(timeline.getCurrentTarget() === undefined) {
+							// Set timeline position to the first one.
+							timeline.setTarget(0);
+
+							// Stage: Unhide controls.
+							stage.removeClass('hide-controls');
+						} else {
+							// Unmute.
+							volume.unmute();
+						}
+					}, 1000);
 				}
 			};
 
@@ -142,5 +160,10 @@
 				if( on_click_text !== undefined ) close_overview_button.html(on_click_text);
 			});
 		} );
+
+		// Update mask height on window resize.
+		$(window).resize(function(){
+			map.setBottomMaskHeight(about.getDescriptionOffsetFromBottom());
+		});
 	});
 }(jQuery));

@@ -19,38 +19,22 @@ function AboutItem() {
 
 	AboutItem.prototype.setDescription = function(text) {
 		// Delete previous text.
-		description_typed.empty();
-		description_hidden.empty();
-
-		/*
-		var intervalObject = description_typed.data('text-animation-object');
-		if(intervalObject !== undefined) clearInterval(intervalObject);
-
-
-		// Get animation parameters.
-		var typeSpeed = description_typed.attr('data-type-speed');
-		*/
+		description_txt.empty();
 
 		// Stop here, if no new description is set.
-		if(text == null) return;
+		if(text == null) {
+			console.log('Clear Description' );
+			return;
+		}
 
 		// If there is a description set, add text and animation.
-		description_hidden.html(text);
-		description_typed.html(text);
+		console.log('Fill Description' );
+		description_txt.html(text);
+	};
 
-		/*
-		description_typed.data('text-animation-object', setInterval(function(){
-			// Clear animation object, when done.
-			if(text === description_typed.html()){
-				clearInterval(description_typed.data('text-animation-object'));
-				console.log('Clear animation object.');
-				return;
-			}
-
-			// Add a new letter.
-			description_typed.html(text.substring(0, description_typed.html().length + 1));
-		}, typeSpeed === undefined ? 100 : typeSpeed));
-		*/
+	AboutItem.prototype.getDescriptionOffsetFromBottom = function() {
+		// Get offset.
+		return $(window).height() - description.offset().top;
 	};
 
 	var about = $('.about-item');
@@ -59,7 +43,6 @@ function AboutItem() {
 	var month = about.find('.month' );
 	var latitude = about.find('.lat' );
 	var longitude = about.find('.lng' );
-	var description = about.find('.description' );
-	var description_hidden = description.find('.hidden-text' );
-	var description_typed = description.find('.typed-text' );
+	var description = about.find('.description');
+	var description_txt = description.children('span');
 }

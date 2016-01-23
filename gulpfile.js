@@ -52,9 +52,9 @@ return plugins.rubySass(config.src_scss + '/*', { style: 'expanded' })
 		this.emit('end');
 	})
 	.pipe(plugins.autoprefixer('> 5%', 'last 1 version'))
-	/*.pipe(plugins.sourcemaps.init())
+	//.pipe(plugins.sourcemaps.init())
 	.pipe(plugins.minifyCss(config.minifyCss))
-	 .pipe(plugins.sourcemaps.write())*/
+	//.pipe(plugins.sourcemaps.write())
 	.pipe(plugins.rename({ suffix: '.min' }))
 	.pipe(gulp.dest(config.dst_css));
 });
@@ -63,9 +63,9 @@ return plugins.rubySass(config.src_scss + '/*', { style: 'expanded' })
 gulp.task('plugin-styles', function () {
 	return gulp.src(config.plugin_srcs.styles)
 		.pipe(plugins.concat('plugins.css'))
-		/*.pipe(plugins.sourcemaps.init())
+		//.pipe(plugins.sourcemaps.init())
 		.pipe(plugins.minifyCss(config.minifyCss))
-		.pipe(plugins.sourcemaps.write())*/
+		//.pipe(plugins.sourcemaps.write())
 		.pipe(plugins.rename({ suffix: '.min' }))
 		.pipe(gulp.dest(config.dst_css));
 });
@@ -74,10 +74,10 @@ gulp.task('plugin-styles', function () {
 gulp.task('scripts',function(){
 	return gulp.src(config.src_js + '/*.js')
 		.pipe(plugins.concat('app.js'))
-		/*.pipe(plugins.sourcemaps.init())
-		.pipe(plugins.uglify(config.uglify))*/
+		//.pipe(plugins.sourcemaps.init())
+		.pipe(plugins.uglify(config.uglify))
 		.pipe(plugins.stripDebug())
-		/*.pipe(plugins.sourcemaps.write())*/
+		//.pipe(plugins.sourcemaps.write())
 		.pipe(plugins.rename({ suffix: '.min' }))
 		.pipe(gulp.dest(config.dst_js));
 });
@@ -86,9 +86,9 @@ gulp.task('scripts',function(){
 gulp.task('plugin-scripts', function() {
 	gulp.src(config.plugin_srcs.scripts)
 		.pipe(plugins.concat("plugins.js"))
-		/*.pipe(plugins.sourcemaps.init())
+		//.pipe(plugins.sourcemaps.init())
 		.pipe(plugins.uglify(config.uglify))
-		.pipe(plugins.sourcemaps.write())*/
+		//.pipe(plugins.sourcemaps.write())
 		.pipe(plugins.rename({ suffix: '.min' }))
 		.pipe(gulp.dest( config.dst_js ))
 });

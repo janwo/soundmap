@@ -65,7 +65,6 @@ function PulsarPoint() {
 			end: 0
 		}
 	};
-	console.log(wave.thickness);
 
 	// Get the pulsar point.
 	var pulsar = $( '.pulsar-point' );
