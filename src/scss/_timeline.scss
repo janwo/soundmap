@@ -5,7 +5,7 @@ $timeline-current-target-color: rgba(100, 100, 100, 0.5);
 $timeline-width: 2rem;
 $timeline-current-target-width: $timeline-width * 1.5;
 $timeline-hovered-target-width: $timeline-width * 2;
-$timeline-margin-top: 0.5rem;
+$timeline-margin-top: 1.5rem;
 $timeline-margin-bottom: 2.5rem;
 $timeline-indicator-horizontal-offset: 7rem;
 $timeline-indicator-font-size: 1rem;
@@ -59,7 +59,7 @@ $timeline-indicator-padding: 0.25rem;
           font-family: 'Francois One', sans-serif;
           padding-right: 0.125em;
 
-          &.day {
+          &.month {
             opacity: 0.75;
           }
 

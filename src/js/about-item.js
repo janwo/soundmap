@@ -4,6 +4,31 @@ function AboutItem() {
 
 	AboutItem.prototype.setDate = function(date_string) {
 		var date = new Date(date_string);
+		/*var format_month = function(m) {
+			var months = [
+				"January", "February", "March",
+				"April", "May", "June", "July",
+				"August", "September", "October",
+				"November", "December"
+			];
+			return months[Math.max(0, Math.min(m, 11))];
+		};
+
+		var format_day = function nth(d) {
+			if(d>3 && d<21) return d + 'th';
+			switch (d % 10) {
+				case 1:  return d + 'st';
+				case 2:  return d + 'nd';
+				case 3:  return d + 'rd';
+				default: return d + 'th';
+			}
+		};
+
+		year.html(date.getFullYear());
+		day.html(format_day(date.getDate()));
+		month.html(format_month(date.getMonth()));
+		*/
+
 		year.html(date.getFullYear().toString().substring(2,4));
 		day.html((date.getDate() < 10 ? '0' : '') + date.getDate());
 		month.html((date.getMonth() < 9 ? '0' : '') + (date.getMonth() + 1));

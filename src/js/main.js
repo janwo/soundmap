@@ -17,9 +17,6 @@
 			// Is there at least one item?
 			if(items.length <= 0) return;
 
-			// Set initial map position.
-			map.setLocation(items[0].lat, items[0].lng);
-
 			// Initialize timeline.
 			timeline.addOnChangeListener(function(item){
 				// Update pulsar.
@@ -81,7 +78,6 @@
 				// Update about information.
 				about.setDate(item.date);
 				about.setDescription(null);
-				console.log(about.getDescriptionOffsetFromBottom());
 				map.setBottomMaskHeight(about.getDescriptionOffsetFromBottom());
 
 				// Update map location and set callback for the animation handling.
@@ -95,6 +91,83 @@
 
 			// Set items of the timeline.
 			timeline.setData(items);
+
+			/**
+			 * Shows or hides the overview.
+			 * @param show
+			 */
+			var showOverview = function(show){
+				var overview = $('.overview').removeClass('fadeInDown fadeOutUp');
+				var stage = $('.stage').removeClass('fadeOutDown fadeInUp');
+
+				if(show) {
+					// Stage: Fade out.
+					stage.addClass('fadeOutDown');
+
+					// Overview: Fade in.
+					overview.show().scrollTop(0).addClass('fadeInDown');
+
+					// Mute.
+					volume.mute();
+
+					// Cancel inactive listening.
+					timeline.cancelInactiveListening();
+				} else {
+					// Overview: Fade out.
+					overview.addClass('fadeOutUp');
+
+					// Stage: Fade in.
+					stage.addClass('fadeInUp');
+					setTimeout(function(){
+						// Hide overview.
+						overview.hide();
+
+						// Initial start.
+						if(stage.hasClass('initial-state')) {
+							// Set timeline position to the first one.
+							timeline.setTarget(0);
+
+							// Stage: Unhide controls.
+							stage.removeClass('initial-state');
+
+							// Change text of the button to the click text.
+							var close_overview_button = $('.close-overview');
+							var click_text = close_overview_button.attr('data-click-text');
+							if( click_text !== undefined ) close_overview_button.html(click_text);
+						} else {
+							// Trigger inactive listening again.
+							timeline.triggerInactiveListening();
+						}
+
+						// Unmute.
+						volume.unmute();
+					}, 1000);
+				}
+			};
+
+			// Set inactivity detection.
+			timeline.addOnInactiveListener(function(){
+				// Change text of the button to its initial one.
+				var close_overview_button = $('.close-overview');
+				var initial_text = close_overview_button.attr('data-initial-text');
+				if( initial_text !== undefined ) close_overview_button.html(initial_text);
+
+				// Hide Overview.
+				showOverview(true);
+
+				// Reset timeline.
+				timeline.reset();
+
+				// Reset audio to default state.
+				audio.trigger('pause');
+				volume.unmute();
+
+				// Reset map.
+				map.setLocation(items[0].lat, items[0].lng);
+
+				// Mark stage as to be in it's initial state.
+				$('.stage').addClass('initial-state');
+			});
 
 			// Bind keys.
 			$(document).keyup(function(e) {
@@ -110,55 +183,16 @@
 				}
 			} );
 
-			var overviewClickListener = function(){
-				var overview = $('.overview').removeClass('fadeInDown fadeOutUp');
-				var stage = $('.stage').removeClass('fadeOutDown fadeInUp');
-
-				if($(this).is('.open-overview')) {
-					// Stage: Fade out.
-					stage.addClass('fadeOutDown');
-
-					// Overview: Fade in.
-					overview.show().addClass('fadeInDown');
-
-					// Mute.
-					volume.mute();
-				}
-
-				if($(this ).is('.close-overview')) {
-					// Overview: Fade out.
-					overview.addClass('fadeOutUp');
-
-					// Stage: Fade in.
-					stage.addClass('fadeInUp');
-					setTimeout(function(){
-						// Hide overview.
-						overview.hide();
-
-
-						// Initial start.
-						if(timeline.getCurrentTarget() === undefined) {
-							// Set timeline position to the first one.
-							timeline.setTarget(0);
-
-							// Stage: Unhide controls.
-							stage.removeClass('hide-controls');
-						} else {
-							// Unmute.
-							volume.unmute();
-						}
-					}, 1000);
-				}
-			};
-
 			// Bind overview button toggles.
-			$('.close-overview').click(overviewClickListener);
-			$('.open-overview').click(overviewClickListener ).click(function(){
-				// Change text of the button accordingly.
-				var close_overview_button = $('.close-overview');
-				var on_click_text = close_overview_button.attr('data-onclick-text');
-				if( on_click_text !== undefined ) close_overview_button.html(on_click_text);
+			$('.close-overview').click(function(){
+				showOverview(false);
 			});
+			$('.open-overview').click(function(){
+				showOverview(true);
+			} );
+
+			// Set initial map position.
+			map.setLocation(items[0].lat, items[0].lng);
 		} );
 
 		// Update mask height on window resize.

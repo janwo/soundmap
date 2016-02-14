@@ -1,6 +1,6 @@
 $about-item-margin-right: 9.5rem;
 $about-item-margin-bottom: 2.5rem;
-$about-item-margin-left: 0.5rem;
+$about-item-margin-left: $about-item-margin-bottom;
 
 .about-item {
   position: absolute;
@@ -16,7 +16,7 @@ $about-item-margin-left: 0.5rem;
        padding-right: 0.125em;
        font-family: 'Francois One', sans-serif;
 
-       &.day {
+       &.month {
          opacity: 0.75;
        }
 

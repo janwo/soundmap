@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Sounds of South East Asia</title>
-	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>Soundmap of South East Asia</title>
 	<script src="https://maps.google.com/maps/api/js"></script>
 	<script src="dst/js/plugins.min.js"></script>
 	<script src="dst/js/app.min.js"></script>
@@ -16,25 +16,25 @@
 		<div class="row">
 			<div class="column small-10 medium-8 small-centered">
 				<h1>Soundmap <span>Southeast Asia</span></h1>
-				<p>"Sounds of Southeast Asia" is an interactive and explorative map, representing our auditory travel diary through parts of Southeast Asia. Lena Fuhr, Linh Nguyen, Marie Kollarczyk and Jan Wolf travelled through parts of Southeast Asia between 27 August and 9 October. One recording was taken per day, which yielded 44 recordings in total.</p>
+				<p>"Soundmap of Southeast Asia" is an interactive and explorative map, representing our auditory travel diary through parts of Southeast Asia. Lena Fuhr, Linh Nguyen, Marie Kollarczyk and Jan Wolf travelled through parts of Southeast Asia between 27 August and 9 October. One recording was taken per day, which yielded 44 recordings in total.</p>
 				<p>Functioning as a sound diary this web application integrates a timeline of the daily recorded sounds combined with a map showing the related places. Our objective was quite similar to the one of a typical travel diary: to authentically document our travels.</p>
 				<p>To enable a more focused listening approach, each recording is played back first without any further information as regards its source. Only when a sound is repeated after its length of 30 seconds a description appears to explain the scenery and context.</p>
 				<p>Recording sounds helped us to practice our listening skills and thus become aware of the sonic characteristics of a place by paying attention to its unique soundscape. We hope and anticipate relistening to the recordings will trigger our memories and, at best, even in a few years, conjure images and emotions of that time. However, we also hope to interest other people to explore this site and create experiences of their own by way of listening to the soundscapes presented here. Let’s find out if we are able to escape this very space you are presently in and enter another one, a space of sound an remembrance of things past.</p>
 				<p>This project was part of the seminar “Sound Culture” by Petra Klusmeyer at the Hochschule für Künste Bremen.</p>
 				<div class="text-center">
-					<button class="close-overview" data-onclick-text="Continue Exploration">Start Exploration</button>
+					<button class="close-overview" data-initial-text="Start Exploration" data-click-text="Continue Exploration">Start Exploration</button>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="stage hide-controls">
+	<div class="stage initial-state">
 		<div class="timeline">
 			<div class="inner"></div>
 		</div>
 
 		<div class="about-item">
 			<h1 class="date">
-				<span class="month"></span><span class="day"></span><span class="year"></span>
+				<span class="day"></span><span class="month"></span><span class="year"></span>
 			</h1>
 			<div class="coordinates">
 				Latitude: <span class="lat"></span>Longitude: <span class="lng"></span>

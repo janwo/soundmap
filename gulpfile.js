@@ -29,8 +29,7 @@ config.minifyCss = {
 config.plugin_srcs = {
 	scripts: [
 		config.bower + '/modernizr/modernizr.js',
-		config.bower + '/jquery-placeholder/jquery.placeholder.js',
-		config.bower + '/jquery.cookie/jquery.cookie.js',
+		config.bower + '/jquery/dist/jquery.js',
 		config.bower + '/foundation/js/foundation.js',
 		config.bower + '/fastclick/lib/fastclick.js'
 	],
@@ -138,4 +137,3 @@ gulp.task('default', ['styles', 'scripts', 'images', 'fonts', 'plugins']);
 
 // Plugin task.
 gulp.task('plugins', ['plugin-styles', 'plugin-scripts', 'plugin-fonts']);
-

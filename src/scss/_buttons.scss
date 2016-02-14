@@ -1,7 +1,10 @@
+$button-margin-top: 1.5rem;
+$button-margin-left: $button-margin-top;
+
 .volume-toggle {
   position: absolute;
-  top: 0.5rem;
-  left: 0.5rem;
+  top: $button-margin-top;
+  left: $button-margin-left;
   padding: 0.25em;
   z-index: 6;
   opacity: 0.5;
@@ -16,7 +19,7 @@
 
 .open-overview {
   position: absolute;
-  top: 0.5rem;
+  top: $button-margin-top;
   left: 50%;
   margin-left: -0.8em;
   padding: 0.25em;
